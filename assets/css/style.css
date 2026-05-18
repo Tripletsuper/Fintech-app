@@ -9,78 +9,183 @@
 body {
   background: #f5f6fa;
   color: #1f2937;
-}
-
-/* ===== Layout ===== */
-.center {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-/* ===== Card ===== */
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  width: 320px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-/* ===== Inputs ===== */
-input {
+/* ===== Mobile Container ===== */
+.phone-container {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  outline: none;
+  max-width: 375px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-input:focus {
-  border-color: #3b82f6;
-}
-
-/* ===== Buttons ===== */
-button {
-  width: 100%;
-  padding: 12px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button:hover {
-  background: #1d4ed8;
-}
-
-/* ===== Dashboard ===== */
-header {
-  background: #1e3a8a;
-  color: white;
-  padding: 15px;
+/* ===== Header ===== */
+.header {
+  padding: 20px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.menu {
-  margin-top: 20px;
+.greeting {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.subtext {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ===== Balance Card ===== */
+.balance-card {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: white;
+  padding: 24px;
+  margin: 0 24px 20px;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+}
+
+.balance-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.balance-amount {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.card-number {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.visa-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  color: #1e40af;
+  padding: 4px 8px;
+  font-size: 10px;
+  border-radius: 4px;
+}
+
+/* ===== Actions ===== */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  background: #f3f4f6;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ===== Transactions ===== */
+.transactions {
+  padding: 0 24px 24px;
+}
+
+.transactions-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.tab {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.tab.active {
+  color: #111827;
+  font-weight: bold;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.transaction-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.menu a {
-  text-decoration: none;
-  padding: 10px 15px;
-  background: white;
-  border-radius: 8px;
-  color: #1e3a8a;
+.icon-coffee { background: #fed7aa; }
+.icon-market { background: #fbcfe8; }
+.icon-transfer { background: #bfdbfe; }
+
+.transaction-amount {
   font-weight: bold;
+}
+
+.amount-negative { color: #ef4444; }
+.amount-positive { color: #10b981; }
+
+/* ===== Bottom Nav ===== */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 14px;
+  border-top: 1px solid #eee;
+}
+
+.nav-item {
+  text-align: center;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.nav-item.active {
+  color: #3b82f6;
 }
