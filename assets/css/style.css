@@ -1,109 +1,86 @@
-/* GLOBAL RESET */
+/* ===== Global Reset ===== */
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* BODY */
 body {
-background: #f5f6fa;
-color: #1f2937;
+  background: #f5f6fa;
+  color: #1f2937;
 }
 
-/* CENTER LOGIN PAGE */
+/* ===== Layout ===== */
 .center {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* CARD STYLE */
+/* ===== Card ===== */
 .card {
-background: white;
-padding: 20px;
-width: 320px;
-border-radius: 12px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-text-align: center;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
 }
 
-/* INPUTS */
+/* ===== Inputs ===== */
 input {
-width: 90%;
-padding: 12px;
-margin: 10px 0;
-border: 1px solid #ddd;
-border-radius: 8px;
-outline: none;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
 }
 
-/* BUTTON */
+input:focus {
+  border-color: #3b82f6;
+}
+
+/* ===== Buttons ===== */
 button {
-padding: 10px 18px;
-background: #3b82f6;
-color: white;
-border: none;
-border-radius: 8px;
-cursor: pointer;
-font-weight: bold;
-transition: 0.3s;
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 button:hover {
-background: #2563eb;
+  background: #1d4ed8;
 }
 
-/* HEADER */
+/* ===== Dashboard ===== */
 header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-background: #1e3a8a;
-color: white;
+  background: #1e3a8a;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* DASHBOARD CARD */
-.balance-card {
-background: linear-gradient(135deg, #3b82f6, #1e40af);
-color: white;
-padding: 25px;
-border-radius: 15px;
-margin: 20px;
-}
-
-/* MENU LINKS */
 .menu {
-display: flex;
-gap: 15px;
-padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
 .menu a {
-text-decoration: none;
-color: #3b82f6;
-font-weight: bold;
-}
-
-/* TRANSACTIONS LIST */
-ul {
-list-style: none;
-padding: 20px;
-}
-
-li {
-background: white;
-padding: 12px;
-margin: 8px 0;
-border-radius: 8px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-/* LOGIN MESSAGE */
-#msg {
-color: red;
-margin-top: 10px;
+  text-decoration: none;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 8px;
+  color: #1e3a8a;
+  font-weight: bold;
 }

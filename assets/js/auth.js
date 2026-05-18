@@ -1,14 +1,15 @@
-// Citiigroup auth system
+// Citiigroup auth system (fixed version)
 
 const validCredentials = {
   username: "Henry Nguyen",
   password: "Nguyen1990"
 };
 
-// login
+// elements
 const loginForm = document.getElementById("loginForm");
 const msg = document.getElementById("msg");
 
+// login handler
 if (loginForm) {
   loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -20,36 +21,31 @@ if (loginForm) {
       username === validCredentials.username &&
       password === validCredentials.password
     ) {
+      // save session
       localStorage.setItem("loggedIn", "true");
-      msg.style.color = "green";
-      msg.innerText = "Login successful... redirecting";
 
+      if (msg) msg.innerText = "Login successful...";
+
+      // redirect to dashboard
       setTimeout(() => {
         window.location.href = "dashboard.html";
-      }, 1000);
+      }, 800);
 
     } else {
-      msg.style.color = "red";
-      msg.innerText = "Invalid credentials";
+      if (msg) msg.innerText = "Invalid username or password";
     }
   });
 }
 
-// logout (dashboard)
-const logoutBtn = document.getElementById("logoutBtn");
-
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", () => {
-    localStorage.removeItem("loggedIn");
-    window.location.href = "index.html";
-  });
-}
-
-// protect dashboard page
-window.addEventListener("load", () => {
-  const isLoggedIn = localStorage.getItem("loggedIn");
-
-  if (!isLoggedIn && window.location.pathname.includes("dashboard")) {
+// protect dashboard
+function checkAuth() {
+  if (localStorage.getItem("loggedIn") !== "true") {
     window.location.href = "index.html";
   }
-});
+}
+
+// logout
+function logout() {
+  localStorage.removeItem("loggedIn");
+  window.location.href = "index.html";
+}
